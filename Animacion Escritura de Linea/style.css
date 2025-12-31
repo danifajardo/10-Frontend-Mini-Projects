@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+p{
+    font-size: xx-large;
+    color:chartreuse;
+    font-family:monospace;
+    display: inline;
+    position: relative;
+}
+
+#phrase::after{
+    content: '|'; /* The cursor character, or an empty string with a background/border */
+    position: absolute;
+    right: -0.5em; /* Adjust positioning as needed */
+    color: chartreuse; /* Cursor color */
+    font-weight: bolder;
+    animation: blink 1s step-end infinite; /* Apply the blink animation */
+}
+
+/* The blink animation definition */
+@keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
