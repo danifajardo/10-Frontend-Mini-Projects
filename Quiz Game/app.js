@@ -34,7 +34,83 @@ const quizQuestions = [
             {text: "Organiation of United Nations", correct: true},
             {text: "Obese Unified for Nachos", correct: false}
         ]
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        answers: [
+            {text: "Venus", correct: false},
+            {text: "Mars", correct: true},
+            {text: "Jupiter", correct: false},
+            {text: "Saturn", correct: false}
+        ]
+    },
+    {
+        question: "What is the largest ocean on Earth?",
+        answers: [
+            {text: "Atlantic Ocean", correct: false},
+            {text: "Indian Ocean", correct: false},
+            {text: "Artic Ocean", correct: false},
+            {text: "Pacific Ocean", correct: true}
+        ]
+    },
+    {
+        question: "Which is NOT a programming language?",
+        answers: [
+            {text: "Java", correct: false},
+            {text: "CY", correct: true},
+            {text: "Python", correct: false},
+            {text: "Javascript", correct: false}
+        ]
     }
 ];
+
+//Quiz state variables
+let currentQuestionIndex = 0;
+let score = 0;
+let answersDisabled = false;
+
+totalQuestionSpan.textContent = quizQuestions.length;
+maxScoreSpan.textContent = quizQuestions.length;
+
+//event listeners
+
+startButton.addEventListener("click", startQuiz)
+restartButton.addEventListener("click", restartQuiz)
+
+function startQuiz(){
+    //restart variables
+    currentQuestionIndex = 0;
+    scoreSpan.textContent = 0;
+
+    startScreen.classList.remove("active");
+    quizScreen.classList.add("active");
+
+    //show the first question
+    showQuestion();
+}
+
+function showQuestion(){
+    if(currentQuestionIndex > 4){
+        currentQuestionIndex = 0;
+        //should to redirect to the result screen
+    }else{
+        //set text of the question
+        questionText.textContent = quizQuestions[currentQuestionIndex].question;
+        //set answers
+        for (let index = 0; index < quizQuestions[currentQuestionIndex].length; index++) {
+            const element = array[index];
+            
+        }
+        //add 
+    }
+}
+
+function selectAnswer(element, id, answer){
+    
+}
+
+function restartQuiz(){
+    console.log("quiz re-started");
+}
 
 
